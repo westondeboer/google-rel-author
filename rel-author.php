@@ -24,6 +24,9 @@ add_filter( 'user_contactmethods', 'wd_add_google_profile', 10, 1);
 
 
 function add_google_rel_author() {
+// prevent this from working on the homepage
+if (!is_home())
+
 // Gets Google+ Metadata for the author
 
 $author_gplus = get_the_author_meta('google_profile');
