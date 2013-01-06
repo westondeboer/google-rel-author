@@ -11,7 +11,8 @@ License: GPLv3
 
 
 function wd_add_google_profile( $contactmethods ) {
-	
+
+// Adds Google+ Form field into the edit Author Profile Screen
 $contactmethods['google_profile'] = 'Google Profile URL';
 	
 return $contactmethods;
@@ -21,9 +22,12 @@ return $contactmethods;
 add_filter( 'user_contactmethods', 'wd_add_google_profile', 10, 1);
 
 
+
 function add_google_rel_author() {
+// Gets Google+ Metadata for the author
 
 $author_gplus = get_the_author_meta('google_profile');
+// If Author has entered in there Google+ User Number, Echo it into the header
 
 if ($author_gplus)
 
